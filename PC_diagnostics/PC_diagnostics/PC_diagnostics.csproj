@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBConnection.cs" />
+    <Compile Include="Form_Methods.cs" />
     <Compile Include="frm_login.cs">
       <SubType>Form</SubType>
     </Compile>
