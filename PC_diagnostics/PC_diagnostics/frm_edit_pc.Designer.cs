@@ -1,0 +1,81 @@
+﻿namespace PC_diagnostics
+{
+    partial class frm_edit_pc
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.btn_add = new System.Windows.Forms.Button();
+            this.cmb_select = new System.Windows.Forms.ComboBox();
+            this.txt_update = new System.Windows.Forms.TextBox();
+            this.SuspendLayout();
+            // 
+            // btn_add
+            // 
+            this.btn_add.Location = new System.Drawing.Point(143, 129);
+            this.btn_add.Name = "btn_add";
+            this.btn_add.Size = new System.Drawing.Size(95, 33);
+            this.btn_add.TabIndex = 67;
+            this.btn_add.Text = "Update";
+            this.btn_add.UseVisualStyleBackColor = true;
+            // 
+            // cmb_select
+            // 
+            this.cmb_select.FormattingEnabled = true;
+            this.cmb_select.Location = new System.Drawing.Point(86, 38);
+            this.cmb_select.Name = "cmb_select";
+            this.cmb_select.Size = new System.Drawing.Size(203, 21);
+            this.cmb_select.TabIndex = 68;
+            // 
+            // txt_update
+            // 
+            this.txt_update.Location = new System.Drawing.Point(86, 83);
+            this.txt_update.Name = "txt_update";
+            this.txt_update.Size = new System.Drawing.Size(203, 20);
+            this.txt_update.TabIndex = 69;
+            // 
+            // frm_edit_pc
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(385, 197);
+            this.Controls.Add(this.txt_update);
+            this.Controls.Add(this.cmb_select);
+            this.Controls.Add(this.btn_add);
+            this.Name = "frm_edit_pc";
+            this.Text = "Edit";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Button btn_add;
+        private System.Windows.Forms.ComboBox cmb_select;
+        private System.Windows.Forms.TextBox txt_update;
+    }
+}

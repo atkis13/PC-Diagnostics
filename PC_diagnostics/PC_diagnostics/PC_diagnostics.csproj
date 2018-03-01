@@ -48,16 +48,52 @@
   <ItemGroup>
     <Compile Include="DBConnection.cs" />
     <Compile Include="Form_Methods.cs" />
+    <Compile Include="frm_add_pc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_add_pc.Designer.cs">
+      <DependentUpon>frm_add_pc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_delete_pc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_delete_pc.Designer.cs">
+      <DependentUpon>frm_delete_pc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_edit_pc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_edit_pc.Designer.cs">
+      <DependentUpon>frm_edit_pc.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_login.Designer.cs">
       <DependentUpon>frm_login.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_main.Designer.cs">
+      <DependentUpon>frm_main.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frm_add_pc.resx">
+      <DependentUpon>frm_add_pc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_delete_pc.resx">
+      <DependentUpon>frm_delete_pc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_edit_pc.resx">
+      <DependentUpon>frm_edit_pc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_login.resx">
       <DependentUpon>frm_login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_main.resx">
+      <DependentUpon>frm_main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

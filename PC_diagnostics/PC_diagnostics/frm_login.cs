@@ -29,7 +29,10 @@ namespace PC_diagnostics
                 if (user == conn.Username && pass == conn.Password)
                 {
                     conn.Open();
-                    MessageBox.Show("Connected");                  
+                    MessageBox.Show("Connected");
+                    this.Hide();
+                    frm_main main = new frm_main();
+                    main.Show();
 
                 }
 
