@@ -24,7 +24,9 @@ namespace PC_diagnostics
             try
             {
                 Form_Methods.AddConfigtoDB(txt_system.Text, txt_cpu.Text, txt_mobo.Text, txt_ram.Text, txt_hdd.Text, txt_video_c.Text, txt_psu.Text, txt_os.Text, cmb_back.Text, txt_back_id.Text, dateTimePicker1.Text);
+                Form_Methods.AddPCtoDB(txt_system.Text, txt_owner.Text, txt_description.Text);
                 MessageBox.Show("Added");
+                this.Close();
             }
             catch (Exception ex)
             {

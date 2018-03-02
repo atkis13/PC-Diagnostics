@@ -35,7 +35,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cmb_backup = new System.Windows.Forms.ComboBox();
             this.lbl_bak_date = new System.Windows.Forms.Label();
             this.lbl_bak_id = new System.Windows.Forms.Label();
             this.lbl_os = new System.Windows.Forms.Label();
@@ -65,6 +64,10 @@
             this.btn_edit = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_show = new System.Windows.Forms.Button();
+            this.lbl_backup = new System.Windows.Forms.Label();
+            this.lbl_owner = new System.Windows.Forms.Label();
+            this.lbl_desc = new System.Windows.Forms.Label();
+            this.btn_reload = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -89,7 +92,7 @@
             // lbl_sys_count
             // 
             this.lbl_sys_count.AutoSize = true;
-            this.lbl_sys_count.Location = new System.Drawing.Point(74, 28);
+            this.lbl_sys_count.Location = new System.Drawing.Point(89, 28);
             this.lbl_sys_count.Name = "lbl_sys_count";
             this.lbl_sys_count.Size = new System.Drawing.Size(35, 13);
             this.lbl_sys_count.TabIndex = 2;
@@ -115,6 +118,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lbl_desc);
+            this.groupBox1.Controls.Add(this.lbl_owner);
             this.groupBox1.Controls.Add(this.lbl_sys_count);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.comboBox1);
@@ -129,7 +134,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.cmb_backup);
+            this.groupBox2.Controls.Add(this.lbl_backup);
             this.groupBox2.Controls.Add(this.lbl_bak_date);
             this.groupBox2.Controls.Add(this.lbl_bak_id);
             this.groupBox2.Controls.Add(this.lbl_os);
@@ -155,14 +160,6 @@
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Configuration";
-            // 
-            // cmb_backup
-            // 
-            this.cmb_backup.FormattingEnabled = true;
-            this.cmb_backup.Location = new System.Drawing.Point(125, 251);
-            this.cmb_backup.Name = "cmb_backup";
-            this.cmb_backup.Size = new System.Drawing.Size(55, 21);
-            this.cmb_backup.TabIndex = 26;
             // 
             // lbl_bak_date
             // 
@@ -426,12 +423,51 @@
             this.btn_show.TabIndex = 15;
             this.btn_show.Text = "Show";
             this.btn_show.UseVisualStyleBackColor = true;
+            this.btn_show.Click += new System.EventHandler(this.btn_show_Click);
+            // 
+            // lbl_backup
+            // 
+            this.lbl_backup.AutoSize = true;
+            this.lbl_backup.Location = new System.Drawing.Point(122, 257);
+            this.lbl_backup.Name = "lbl_backup";
+            this.lbl_backup.Size = new System.Drawing.Size(38, 13);
+            this.lbl_backup.TabIndex = 26;
+            this.lbl_backup.Text = "Owner";
+            // 
+            // lbl_owner
+            // 
+            this.lbl_owner.AutoSize = true;
+            this.lbl_owner.Location = new System.Drawing.Point(86, 61);
+            this.lbl_owner.Name = "lbl_owner";
+            this.lbl_owner.Size = new System.Drawing.Size(38, 13);
+            this.lbl_owner.TabIndex = 5;
+            this.lbl_owner.Text = "Owner";
+            // 
+            // lbl_desc
+            // 
+            this.lbl_desc.AutoSize = true;
+            this.lbl_desc.Location = new System.Drawing.Point(86, 92);
+            this.lbl_desc.Name = "lbl_desc";
+            this.lbl_desc.Size = new System.Drawing.Size(38, 13);
+            this.lbl_desc.TabIndex = 6;
+            this.lbl_desc.Text = "Owner";
+            // 
+            // btn_reload
+            // 
+            this.btn_reload.Location = new System.Drawing.Point(381, 95);
+            this.btn_reload.Name = "btn_reload";
+            this.btn_reload.Size = new System.Drawing.Size(111, 31);
+            this.btn_reload.TabIndex = 16;
+            this.btn_reload.Text = "Reload";
+            this.btn_reload.UseVisualStyleBackColor = true;
+            this.btn_reload.Click += new System.EventHandler(this.btn_reload_Click);
             // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1306, 592);
+            this.Controls.Add(this.btn_reload);
             this.Controls.Add(this.btn_show);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_edit);
@@ -471,7 +507,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox cmb_backup;
         private System.Windows.Forms.Label lbl_bak_date;
         private System.Windows.Forms.Label lbl_bak_id;
         private System.Windows.Forms.Label lbl_os;
@@ -494,5 +529,9 @@
         private System.Windows.Forms.Button btn_edit;
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.Button btn_show;
+        private System.Windows.Forms.Label lbl_backup;
+        private System.Windows.Forms.Label lbl_desc;
+        private System.Windows.Forms.Label lbl_owner;
+        private System.Windows.Forms.Button btn_reload;
     }
 }

@@ -29,6 +29,11 @@ namespace PC_diagnostics
             cmd.Parameters.AddWithValue("@psu", psu);
             cmd.Parameters.AddWithValue("@os", os);
             cmd.Parameters.AddWithValue("@backup", backup);
+            if(backup == "No")
+            {
+                backup_id = "N/A";
+                backup_date = "N/A";
+            }
             cmd.Parameters.AddWithValue("@backup_id", backup_id);
             cmd.Parameters.AddWithValue("@backup_date", backup_date);
             cmd.ExecuteNonQuery();
@@ -105,45 +110,46 @@ namespace PC_diagnostics
             string query= null;
             if (part == "Processor")
             {
-                query = "update pc_config set procesor=@value, Where pc_id = @id;";
+                query = "update pc_config set processor=@value where pc_id = @id;";
             }
             else if(part == "Motherboard")
             {
-                query = "update pc_config set Motherboard=@value, Where pc_id = @id;";
+                query = "update pc_config set Motherboard=@value where pc_id = @id;";
             }
             else if(part == "RAM")
             {
-                query = "update pc_config set RAM=@value, Where pc_id = @id;";
+                query = "update pc_config set RAM=@value where pc_id = @id;";
             }
             else if (part == "HDD")
             {
-                query = "update pc_config set HDD=@value, Where pc_id = @id;";
+                query = "update pc_config set HDD=@value where pc_id = @id;";
             }
             else if (part == "Video Card")
             {
-                query = "update pc_config set Video_card=@value, Where pc_id = @id;";
+                query = "update pc_config set Video_card=@value where pc_id = @id;";
             }
             else if (part == "Power Source")
             {
-                query = "update pc_config set Power_Source=@value, Where pc_id = @id;";
+                query = "update pc_config set Power_Source=@value where pc_id = @id;";
             }
             else if (part == "OS")
             {
-                query = "update pc_config set OS=@value, Where pc_id = @id;";
+                query = "update pc_config set OS=@value where pc_id = @id;";
             }
             else if (part == "Bakup")
             {
-                query = "update pc_config set Backup=@value, Where pc_id = @id;";
+                query = "update pc_config set Backup=@value where pc_id = @id;";
             }
             else if (part == "Backup ID")
             {
-                query = "update pc_config set Backup_id=@value, Where pc_id = @id;";
+                query = "update pc_config set Backup_id=@value where pc_id = @id;";
             }
             else if (part == "Backup Date")
             {
-                query = "update pc_config set Backup_date=@value, Where pc_id = @id;";
-            }         
-            
+                query = "update pc_config set Backup_date=@value where pc_id = @id;";
+            }
+
+
 
             conn = new DBConnection();            
             conn.Open();
@@ -160,11 +166,11 @@ namespace PC_diagnostics
             string query = null;
             if (part == "Owner")
             {
-                query = "update pc_ids set owner_name=@value, Where pc_id = @id;";
+                query = "update pc_ids set owner_name=@value where pc_id = @id;";
             }
             else if (part == "Description")
             {
-                query = "update pc_ids set description=@value, Where pc_id = @id;";
+                query = "update pc_ids set description=@value where pc_id = @id;";
             }
             conn = new DBConnection();
             conn.Open();
@@ -197,6 +203,32 @@ namespace PC_diagnostics
 
         }
 
+        public static void FillCombo(ComboBox cb)
+        {
+            string query = "Select * from pc_ids;";
+            conn = new DBConnection();
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand(query, conn.getConnection());
+            MySqlDataReader red = cmd.ExecuteReader();
+            while (red.Read())
+            {
+                string id = red.GetString("pc_id");
+                cb.Items.Add(id);
+            }
+
+        }
+
+        public static void NRSystems(Label lb)
+        {
+            string query = "SELECT COUNT(*) FROM pc_ids";
+            conn = new DBConnection();
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand(query, conn.getConnection());
+            long count = (long)cmd.ExecuteScalar();
+            lb.Text = count.ToString();
+
+        }
+
         public static void CloseDBConnection()
         {
             conn.Close();
@@ -212,19 +244,6 @@ namespace PC_diagnostics
 
         }
 
-        public static void FillCombo(ComboBox cb)
-        {
-            string query = "Select * from pc_ids;";
-            conn = new DBConnection();
-            conn.Open();
-            MySqlCommand cmd = new MySqlCommand(query, conn.getConnection());
-            MySqlDataReader red = cmd.ExecuteReader();
-            while (red.Read())
-            {
-                string id = red.GetString("pc_id");
-                cb.Items.Add(id);
-            }
-
-        }
+        
     }
 }
