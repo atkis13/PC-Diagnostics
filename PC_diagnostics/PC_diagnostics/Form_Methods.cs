@@ -212,7 +212,7 @@ namespace PC_diagnostics
 
         }
 
-        public static void FIllCombo(ComboBox cb)
+        public static void FillCombo(ComboBox cb)
         {
             string query = "Select * from pc_ids;";
             conn = new DBConnection();
@@ -221,8 +221,8 @@ namespace PC_diagnostics
             MySqlDataReader red = cmd.ExecuteReader();
             while (red.Read())
             {
-                string name = red.GetString("pc_id");
-                cb.Items.Add(name);
+                string id = red.GetString("pc_id");
+                cb.Items.Add(id);
             }
 
         }

@@ -12,9 +12,24 @@ namespace PC_diagnostics
 {
     public partial class frm_main : Form
     {
-        public frm_main()
+        public frm_main()       
         {
             InitializeComponent();
+            try
+            {
+                Form_Methods.FillCombo(comboBox1);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                Form_Methods.CloseDBConnection();
+            }
+            cmb_backup.Items.Add("Yes");
+            cmb_backup.Items.Add("No");
+           
         }
 
         private void btn_add_pc_Click(object sender, EventArgs e)

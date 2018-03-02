@@ -52,9 +52,9 @@
             this.txt_psu = new System.Windows.Forms.TextBox();
             this.txt_os = new System.Windows.Forms.TextBox();
             this.txt_back_id = new System.Windows.Forms.TextBox();
-            this.txt_back_date = new System.Windows.Forms.TextBox();
             this.cmb_back = new System.Windows.Forms.ComboBox();
             this.btn_add = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label3
@@ -251,13 +251,6 @@
             this.txt_back_id.Size = new System.Drawing.Size(203, 20);
             this.txt_back_id.TabIndex = 37;
             // 
-            // txt_back_date
-            // 
-            this.txt_back_date.Location = new System.Drawing.Point(138, 435);
-            this.txt_back_date.Name = "txt_back_date";
-            this.txt_back_date.Size = new System.Drawing.Size(203, 20);
-            this.txt_back_date.TabIndex = 38;
-            // 
             // cmb_back
             // 
             this.cmb_back.FormattingEnabled = true;
@@ -274,15 +267,25 @@
             this.btn_add.TabIndex = 40;
             this.btn_add.Text = "Add";
             this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "dd-MM-yyyy";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(141, 438);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(90, 20);
+            this.dateTimePicker1.TabIndex = 41;
             // 
             // frm_add_pc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(394, 536);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.cmb_back);
-            this.Controls.Add(this.txt_back_date);
             this.Controls.Add(this.txt_back_id);
             this.Controls.Add(this.txt_os);
             this.Controls.Add(this.txt_psu);
@@ -340,8 +343,8 @@
         private System.Windows.Forms.TextBox txt_psu;
         private System.Windows.Forms.TextBox txt_os;
         private System.Windows.Forms.TextBox txt_back_id;
-        private System.Windows.Forms.TextBox txt_back_date;
         private System.Windows.Forms.ComboBox cmb_back;
         private System.Windows.Forms.Button btn_add;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
