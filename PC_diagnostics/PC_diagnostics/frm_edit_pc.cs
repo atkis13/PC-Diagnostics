@@ -12,9 +12,16 @@ namespace PC_diagnostics
 {
     public partial class frm_edit_pc : Form
     {
+        string id;
         public frm_edit_pc()
         {
+            
             InitializeComponent();
+        }
+
+        public string getID
+        {
+            set { id = value; }
         }
     }
 }

@@ -35,26 +35,26 @@
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.lbl_cpu = new System.Windows.Forms.Label();
-            this.lbl_mobo = new System.Windows.Forms.Label();
-            this.lbl_ram = new System.Windows.Forms.Label();
-            this.lbl_hdd = new System.Windows.Forms.Label();
-            this.lbl_video = new System.Windows.Forms.Label();
-            this.lbl_psu = new System.Windows.Forms.Label();
-            this.lbl_os = new System.Windows.Forms.Label();
-            this.lbl_bak_id = new System.Windows.Forms.Label();
-            this.lbl_bak_date = new System.Windows.Forms.Label();
             this.cmb_backup = new System.Windows.Forms.ComboBox();
+            this.lbl_bak_date = new System.Windows.Forms.Label();
+            this.lbl_bak_id = new System.Windows.Forms.Label();
+            this.lbl_os = new System.Windows.Forms.Label();
+            this.lbl_psu = new System.Windows.Forms.Label();
+            this.lbl_video = new System.Windows.Forms.Label();
+            this.lbl_hdd = new System.Windows.Forms.Label();
+            this.lbl_ram = new System.Windows.Forms.Label();
+            this.lbl_mobo = new System.Windows.Forms.Label();
+            this.lbl_cpu = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.btn_add_pc = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -64,6 +64,7 @@
             this.btn_exit = new System.Windows.Forms.Button();
             this.btn_edit = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
+            this.btn_show = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -155,167 +156,13 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Configuration";
             // 
-            // label4
+            // cmb_backup
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 30);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(32, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "CPU:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(17, 64);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 13);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Motherboard:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(17, 95);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(34, 13);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "RAM:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(17, 127);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(34, 13);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "HDD:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(17, 160);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(62, 13);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "Video Card:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(17, 196);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(32, 13);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "PSU:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(17, 229);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(25, 13);
-            this.label10.TabIndex = 13;
-            this.label10.Text = "OS:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(17, 259);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(44, 13);
-            this.label11.TabIndex = 14;
-            this.label11.Text = "Backup";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(17, 296);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(58, 13);
-            this.label12.TabIndex = 15;
-            this.label12.Text = "Backup ID";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(17, 331);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(70, 13);
-            this.label13.TabIndex = 16;
-            this.label13.Text = "Backup Date";
-            // 
-            // lbl_cpu
-            // 
-            this.lbl_cpu.AutoSize = true;
-            this.lbl_cpu.Location = new System.Drawing.Point(122, 30);
-            this.lbl_cpu.Name = "lbl_cpu";
-            this.lbl_cpu.Size = new System.Drawing.Size(38, 13);
-            this.lbl_cpu.TabIndex = 17;
-            this.lbl_cpu.Text = "Owner";
-            // 
-            // lbl_mobo
-            // 
-            this.lbl_mobo.AutoSize = true;
-            this.lbl_mobo.Location = new System.Drawing.Point(122, 64);
-            this.lbl_mobo.Name = "lbl_mobo";
-            this.lbl_mobo.Size = new System.Drawing.Size(38, 13);
-            this.lbl_mobo.TabIndex = 18;
-            this.lbl_mobo.Text = "Owner";
-            // 
-            // lbl_ram
-            // 
-            this.lbl_ram.AutoSize = true;
-            this.lbl_ram.Location = new System.Drawing.Point(122, 95);
-            this.lbl_ram.Name = "lbl_ram";
-            this.lbl_ram.Size = new System.Drawing.Size(38, 13);
-            this.lbl_ram.TabIndex = 19;
-            this.lbl_ram.Text = "Owner";
-            // 
-            // lbl_hdd
-            // 
-            this.lbl_hdd.AutoSize = true;
-            this.lbl_hdd.Location = new System.Drawing.Point(122, 127);
-            this.lbl_hdd.Name = "lbl_hdd";
-            this.lbl_hdd.Size = new System.Drawing.Size(38, 13);
-            this.lbl_hdd.TabIndex = 20;
-            this.lbl_hdd.Text = "Owner";
-            // 
-            // lbl_video
-            // 
-            this.lbl_video.AutoSize = true;
-            this.lbl_video.Location = new System.Drawing.Point(122, 160);
-            this.lbl_video.Name = "lbl_video";
-            this.lbl_video.Size = new System.Drawing.Size(38, 13);
-            this.lbl_video.TabIndex = 21;
-            this.lbl_video.Text = "Owner";
-            // 
-            // lbl_psu
-            // 
-            this.lbl_psu.AutoSize = true;
-            this.lbl_psu.Location = new System.Drawing.Point(122, 196);
-            this.lbl_psu.Name = "lbl_psu";
-            this.lbl_psu.Size = new System.Drawing.Size(38, 13);
-            this.lbl_psu.TabIndex = 22;
-            this.lbl_psu.Text = "Owner";
-            // 
-            // lbl_os
-            // 
-            this.lbl_os.AutoSize = true;
-            this.lbl_os.Location = new System.Drawing.Point(122, 229);
-            this.lbl_os.Name = "lbl_os";
-            this.lbl_os.Size = new System.Drawing.Size(38, 13);
-            this.lbl_os.TabIndex = 23;
-            this.lbl_os.Text = "Owner";
-            // 
-            // lbl_bak_id
-            // 
-            this.lbl_bak_id.AutoSize = true;
-            this.lbl_bak_id.Location = new System.Drawing.Point(122, 296);
-            this.lbl_bak_id.Name = "lbl_bak_id";
-            this.lbl_bak_id.Size = new System.Drawing.Size(38, 13);
-            this.lbl_bak_id.TabIndex = 24;
-            this.lbl_bak_id.Text = "Owner";
+            this.cmb_backup.FormattingEnabled = true;
+            this.cmb_backup.Location = new System.Drawing.Point(125, 251);
+            this.cmb_backup.Name = "cmb_backup";
+            this.cmb_backup.Size = new System.Drawing.Size(55, 21);
+            this.cmb_backup.TabIndex = 26;
             // 
             // lbl_bak_date
             // 
@@ -326,17 +173,171 @@
             this.lbl_bak_date.TabIndex = 25;
             this.lbl_bak_date.Text = "Owner";
             // 
-            // cmb_backup
+            // lbl_bak_id
             // 
-            this.cmb_backup.FormattingEnabled = true;
-            this.cmb_backup.Location = new System.Drawing.Point(125, 251);
-            this.cmb_backup.Name = "cmb_backup";
-            this.cmb_backup.Size = new System.Drawing.Size(55, 21);
-            this.cmb_backup.TabIndex = 26;
+            this.lbl_bak_id.AutoSize = true;
+            this.lbl_bak_id.Location = new System.Drawing.Point(122, 296);
+            this.lbl_bak_id.Name = "lbl_bak_id";
+            this.lbl_bak_id.Size = new System.Drawing.Size(38, 13);
+            this.lbl_bak_id.TabIndex = 24;
+            this.lbl_bak_id.Text = "Owner";
+            // 
+            // lbl_os
+            // 
+            this.lbl_os.AutoSize = true;
+            this.lbl_os.Location = new System.Drawing.Point(122, 229);
+            this.lbl_os.Name = "lbl_os";
+            this.lbl_os.Size = new System.Drawing.Size(38, 13);
+            this.lbl_os.TabIndex = 23;
+            this.lbl_os.Text = "Owner";
+            // 
+            // lbl_psu
+            // 
+            this.lbl_psu.AutoSize = true;
+            this.lbl_psu.Location = new System.Drawing.Point(122, 196);
+            this.lbl_psu.Name = "lbl_psu";
+            this.lbl_psu.Size = new System.Drawing.Size(38, 13);
+            this.lbl_psu.TabIndex = 22;
+            this.lbl_psu.Text = "Owner";
+            // 
+            // lbl_video
+            // 
+            this.lbl_video.AutoSize = true;
+            this.lbl_video.Location = new System.Drawing.Point(122, 160);
+            this.lbl_video.Name = "lbl_video";
+            this.lbl_video.Size = new System.Drawing.Size(38, 13);
+            this.lbl_video.TabIndex = 21;
+            this.lbl_video.Text = "Owner";
+            // 
+            // lbl_hdd
+            // 
+            this.lbl_hdd.AutoSize = true;
+            this.lbl_hdd.Location = new System.Drawing.Point(122, 127);
+            this.lbl_hdd.Name = "lbl_hdd";
+            this.lbl_hdd.Size = new System.Drawing.Size(38, 13);
+            this.lbl_hdd.TabIndex = 20;
+            this.lbl_hdd.Text = "Owner";
+            // 
+            // lbl_ram
+            // 
+            this.lbl_ram.AutoSize = true;
+            this.lbl_ram.Location = new System.Drawing.Point(122, 95);
+            this.lbl_ram.Name = "lbl_ram";
+            this.lbl_ram.Size = new System.Drawing.Size(38, 13);
+            this.lbl_ram.TabIndex = 19;
+            this.lbl_ram.Text = "Owner";
+            // 
+            // lbl_mobo
+            // 
+            this.lbl_mobo.AutoSize = true;
+            this.lbl_mobo.Location = new System.Drawing.Point(122, 64);
+            this.lbl_mobo.Name = "lbl_mobo";
+            this.lbl_mobo.Size = new System.Drawing.Size(38, 13);
+            this.lbl_mobo.TabIndex = 18;
+            this.lbl_mobo.Text = "Owner";
+            // 
+            // lbl_cpu
+            // 
+            this.lbl_cpu.AutoSize = true;
+            this.lbl_cpu.Location = new System.Drawing.Point(122, 30);
+            this.lbl_cpu.Name = "lbl_cpu";
+            this.lbl_cpu.Size = new System.Drawing.Size(38, 13);
+            this.lbl_cpu.TabIndex = 17;
+            this.lbl_cpu.Text = "Owner";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(17, 331);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(70, 13);
+            this.label13.TabIndex = 16;
+            this.label13.Text = "Backup Date";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(17, 296);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(58, 13);
+            this.label12.TabIndex = 15;
+            this.label12.Text = "Backup ID";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(17, 259);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(44, 13);
+            this.label11.TabIndex = 14;
+            this.label11.Text = "Backup";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(17, 229);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(25, 13);
+            this.label10.TabIndex = 13;
+            this.label10.Text = "OS:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(17, 196);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(32, 13);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "PSU:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(17, 160);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(62, 13);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "Video Card:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(17, 127);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(34, 13);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "HDD:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(17, 95);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(34, 13);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "RAM:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(17, 64);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(70, 13);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Motherboard:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(17, 30);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(32, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "CPU:";
             // 
             // btn_add_pc
             // 
-            this.btn_add_pc.Location = new System.Drawing.Point(365, 35);
+            this.btn_add_pc.Location = new System.Drawing.Point(1183, 438);
             this.btn_add_pc.Name = "btn_add_pc";
             this.btn_add_pc.Size = new System.Drawing.Size(111, 31);
             this.btn_add_pc.TabIndex = 7;
@@ -380,7 +381,7 @@
             // 
             // btn_add_log
             // 
-            this.btn_add_log.Location = new System.Drawing.Point(1014, 308);
+            this.btn_add_log.Location = new System.Drawing.Point(1023, 317);
             this.btn_add_log.Name = "btn_add_log";
             this.btn_add_log.Size = new System.Drawing.Size(111, 31);
             this.btn_add_log.TabIndex = 11;
@@ -399,7 +400,7 @@
             // 
             // btn_edit
             // 
-            this.btn_edit.Location = new System.Drawing.Point(366, 86);
+            this.btn_edit.Location = new System.Drawing.Point(1183, 475);
             this.btn_edit.Name = "btn_edit";
             this.btn_edit.Size = new System.Drawing.Size(111, 31);
             this.btn_edit.TabIndex = 13;
@@ -409,7 +410,7 @@
             // 
             // btn_delete
             // 
-            this.btn_delete.Location = new System.Drawing.Point(366, 134);
+            this.btn_delete.Location = new System.Drawing.Point(1183, 512);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(111, 31);
             this.btn_delete.TabIndex = 14;
@@ -417,11 +418,21 @@
             this.btn_delete.UseVisualStyleBackColor = true;
             this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
+            // btn_show
+            // 
+            this.btn_show.Location = new System.Drawing.Point(381, 44);
+            this.btn_show.Name = "btn_show";
+            this.btn_show.Size = new System.Drawing.Size(111, 31);
+            this.btn_show.TabIndex = 15;
+            this.btn_show.Text = "Show";
+            this.btn_show.UseVisualStyleBackColor = true;
+            // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1306, 592);
+            this.Controls.Add(this.btn_show);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_edit);
             this.Controls.Add(this.btn_exit);
@@ -482,5 +493,6 @@
         private System.Windows.Forms.Button btn_exit;
         private System.Windows.Forms.Button btn_edit;
         private System.Windows.Forms.Button btn_delete;
+        private System.Windows.Forms.Button btn_show;
     }
 }

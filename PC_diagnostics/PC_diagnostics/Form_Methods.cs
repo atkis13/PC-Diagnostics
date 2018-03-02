@@ -11,6 +11,7 @@ namespace PC_diagnostics
 {
     class Form_Methods
     {
+        string message;
         static DBConnection conn;
 
         public static void AddConfigtoDB(string id, string processor, string mobo, string ram, string hdd, string video_card, string psu, string os, string backup, string backup_id, string backup_date)
@@ -83,7 +84,7 @@ namespace PC_diagnostics
 
         public static void GetPCDetailsFromDB(string id, Label owner, Label description)
         {
-            string query = "Select * from  pc_config where pc_id = @id;";
+            string query = "Select * from pc_ids where pc_id = @id;";
             conn = new DBConnection();
             conn.Open();
             MySqlCommand cmd = new MySqlCommand(query, conn.getConnection());
@@ -99,14 +100,106 @@ namespace PC_diagnostics
 
         }
 
-        public static void EditConfigDB(string id, string processor, string mobo, string ram, string hdd, string video_card, string psu, string os, string backup, string backup_id)
+        public static void EditConfigDB(string id, string part, string value)
         {
+            string query= null;
+            if (part == "Processor")
+            {
+                query = "update pc_config set procesor=@value, Where pc_id = @id;";
+            }
+            else if(part == "Motherboard")
+            {
+                query = "update pc_config set Motherboard=@value, Where pc_id = @id;";
+            }
+            else if(part == "RAM")
+            {
+                query = "update pc_config set RAM=@value, Where pc_id = @id;";
+            }
+            else if (part == "HDD")
+            {
+                query = "update pc_config set HDD=@value, Where pc_id = @id;";
+            }
+            else if (part == "Video Card")
+            {
+                query = "update pc_config set Video_card=@value, Where pc_id = @id;";
+            }
+            else if (part == "Power Source")
+            {
+                query = "update pc_config set Power_Source=@value, Where pc_id = @id;";
+            }
+            else if (part == "OS")
+            {
+                query = "update pc_config set OS=@value, Where pc_id = @id;";
+            }
+            else if (part == "Bakup")
+            {
+                query = "update pc_config set Backup=@value, Where pc_id = @id;";
+            }
+            else if (part == "Backup ID")
+            {
+                query = "update pc_config set Backup_id=@value, Where pc_id = @id;";
+            }
+            else if (part == "Backup Date")
+            {
+                query = "update pc_config set Backup_date=@value, Where pc_id = @id;";
+            }         
+            
+
+            conn = new DBConnection();            
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand(query, conn.getConnection());
+            cmd.Parameters.AddWithValue("@value", value);
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.ExecuteNonQuery();
+            
 
         }
 
-        public static void EditPCDB(string id, string owner, string description)
+        public static void EditPCDB(string id, string part, string value)
         {
+            string query = null;
+            if (part == "Owner")
+            {
+                query = "update pc_ids set owner_name=@value, Where pc_id = @id;";
+            }
+            else if (part == "Description")
+            {
+                query = "update pc_ids set description=@value, Where pc_id = @id;";
+            }
+            conn = new DBConnection();
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand(query, conn.getConnection());
+            cmd.Parameters.AddWithValue("@value", value);
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.ExecuteNonQuery();
 
+        }
+
+        public static void deletePCConfig(string id)
+        {
+            string query = "delete from pc_config where pc_id = @id;";
+            conn = new DBConnection();           
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand(query, conn.getConnection());
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.ExecuteNonQuery();
+
+        }
+
+        public static void deletePC(string id)
+        {
+            string query = "delete from pc_ids where pc_id = @id;";
+            conn = new DBConnection();
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand(query, conn.getConnection());
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.ExecuteNonQuery();
+
+        }
+
+        public static void CloseDBConnection()
+        {
+            conn.Close();
         }
 
         public static void CreateNewPDFLog()
