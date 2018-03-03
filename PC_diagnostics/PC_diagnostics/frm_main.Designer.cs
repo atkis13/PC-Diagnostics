@@ -34,7 +34,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbl_desc = new System.Windows.Forms.Label();
+            this.lbl_owner = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lbl_backup = new System.Windows.Forms.Label();
             this.lbl_bak_date = new System.Windows.Forms.Label();
             this.lbl_bak_id = new System.Windows.Forms.Label();
             this.lbl_os = new System.Windows.Forms.Label();
@@ -64,9 +67,6 @@
             this.btn_edit = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_show = new System.Windows.Forms.Button();
-            this.lbl_backup = new System.Windows.Forms.Label();
-            this.lbl_owner = new System.Windows.Forms.Label();
-            this.lbl_desc = new System.Windows.Forms.Label();
             this.btn_reload = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -132,6 +132,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "System Information";
             // 
+            // lbl_desc
+            // 
+            this.lbl_desc.AutoSize = true;
+            this.lbl_desc.Location = new System.Drawing.Point(86, 92);
+            this.lbl_desc.Name = "lbl_desc";
+            this.lbl_desc.Size = new System.Drawing.Size(38, 13);
+            this.lbl_desc.TabIndex = 6;
+            this.lbl_desc.Text = "Owner";
+            // 
+            // lbl_owner
+            // 
+            this.lbl_owner.AutoSize = true;
+            this.lbl_owner.Location = new System.Drawing.Point(86, 61);
+            this.lbl_owner.Name = "lbl_owner";
+            this.lbl_owner.Size = new System.Drawing.Size(38, 13);
+            this.lbl_owner.TabIndex = 5;
+            this.lbl_owner.Text = "Owner";
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.lbl_backup);
@@ -160,6 +178,15 @@
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Configuration";
+            // 
+            // lbl_backup
+            // 
+            this.lbl_backup.AutoSize = true;
+            this.lbl_backup.Location = new System.Drawing.Point(122, 257);
+            this.lbl_backup.Name = "lbl_backup";
+            this.lbl_backup.Size = new System.Drawing.Size(38, 13);
+            this.lbl_backup.TabIndex = 26;
+            this.lbl_backup.Text = "Owner";
             // 
             // lbl_bak_date
             // 
@@ -346,6 +373,7 @@
             // 
             this.richTextBox1.Location = new System.Drawing.Point(545, 77);
             this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(320, 481);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
@@ -384,6 +412,7 @@
             this.btn_add_log.TabIndex = 11;
             this.btn_add_log.Text = "Add Log";
             this.btn_add_log.UseVisualStyleBackColor = true;
+            this.btn_add_log.Click += new System.EventHandler(this.btn_add_log_Click);
             // 
             // btn_exit
             // 
@@ -424,33 +453,6 @@
             this.btn_show.Text = "Show";
             this.btn_show.UseVisualStyleBackColor = true;
             this.btn_show.Click += new System.EventHandler(this.btn_show_Click);
-            // 
-            // lbl_backup
-            // 
-            this.lbl_backup.AutoSize = true;
-            this.lbl_backup.Location = new System.Drawing.Point(122, 257);
-            this.lbl_backup.Name = "lbl_backup";
-            this.lbl_backup.Size = new System.Drawing.Size(38, 13);
-            this.lbl_backup.TabIndex = 26;
-            this.lbl_backup.Text = "Owner";
-            // 
-            // lbl_owner
-            // 
-            this.lbl_owner.AutoSize = true;
-            this.lbl_owner.Location = new System.Drawing.Point(86, 61);
-            this.lbl_owner.Name = "lbl_owner";
-            this.lbl_owner.Size = new System.Drawing.Size(38, 13);
-            this.lbl_owner.TabIndex = 5;
-            this.lbl_owner.Text = "Owner";
-            // 
-            // lbl_desc
-            // 
-            this.lbl_desc.AutoSize = true;
-            this.lbl_desc.Location = new System.Drawing.Point(86, 92);
-            this.lbl_desc.Name = "lbl_desc";
-            this.lbl_desc.Size = new System.Drawing.Size(38, 13);
-            this.lbl_desc.TabIndex = 6;
-            this.lbl_desc.Text = "Owner";
             // 
             // btn_reload
             // 

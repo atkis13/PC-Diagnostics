@@ -60,13 +60,32 @@ namespace PC_diagnostics
         {
             frm_edit_pc edit = new frm_edit_pc();
             edit.getID = comboBox1.Text;
+            edit.getText = richTextBox1.Text;
             edit.Show();
         }
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
-            frm_delete_pc del = new frm_delete_pc();
-            del.Show();
+            try
+            {
+                Form_Methods.deletePCConfig(comboBox1.Text);
+                Form_Methods.deletePC(comboBox1.Text);
+                Form_Methods.DeleteLog(comboBox1.Text);
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                Form_Methods.CloseDBConnection();
+                MessageBox.Show("Record id " + comboBox1.Text + " has been deleted");
+            }
+            
+            
+            
+            
         }
 
         private void btn_show_Click(object sender, EventArgs e)
@@ -75,6 +94,7 @@ namespace PC_diagnostics
             {
                 Form_Methods.GetConfigFromDB(comboBox1.Text, lbl_cpu, lbl_mobo, lbl_ram, lbl_hdd, lbl_video, lbl_psu, lbl_os, lbl_backup, lbl_bak_id, lbl_bak_date);
                 Form_Methods.GetPCDetailsFromDB(comboBox1.Text, lbl_owner, lbl_desc);
+                Form_Methods.ReadPDFLog(comboBox1.Text, richTextBox1);
                 lbl_owner.Visible = true;
                 lbl_desc.Visible = true;
                 lbl_cpu.Visible = true;
@@ -102,6 +122,7 @@ namespace PC_diagnostics
         private void btn_reload_Click(object sender, EventArgs e)
         {
             comboBox1.Items.Clear();
+            richTextBox1.Clear();
             try
             {
                 lbl_owner.Visible = false;
@@ -118,6 +139,8 @@ namespace PC_diagnostics
                 lbl_os.Visible = false;
                 Form_Methods.FillCombo(comboBox1);
                 Form_Methods.NRSystems(lbl_sys_count);
+                
+
             }
             catch (Exception ex)
             {
@@ -128,6 +151,13 @@ namespace PC_diagnostics
                 Form_Methods.CloseDBConnection();
             }
 
+        }
+
+        private void btn_add_log_Click(object sender, EventArgs e)
+        {
+            Form_Methods.AddNewLog(comboBox1.Text, richTextBox1, richTextBox2);
+            MessageBox.Show("Log Added");
+            richTextBox2.Clear();
         }
     }
 }

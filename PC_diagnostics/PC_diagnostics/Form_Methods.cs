@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using iTextSharp.text.pdf.parser;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
+using System.IO;
 
 namespace PC_diagnostics
 {
@@ -234,14 +238,143 @@ namespace PC_diagnostics
             conn.Close();
         }
 
-        public static void CreateNewPDFLog()
+        public static void CreateNewPDFLog(string id,string owner, string description, string cpu, string mobo, string ram, string hdd, string video_c, string psu, string os, string bak, string back_id, string back_date)
         {
+            Document doc = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35);
+            PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream(id+".pdf", FileMode.Create));
+            doc.Open();
+            DateTime d = DateTime.Now;
+            Paragraph p0 = new Paragraph(d.ToString()+": Log Created");
+            Paragraph p_ = new Paragraph(" ");
+            Paragraph p_00 = new Paragraph("NEW SYSTEM");
+            Paragraph p_1 = new Paragraph("System ID: "+ id);
+            Paragraph p_2 = new Paragraph("System Owner: "+owner);
+            Paragraph p_3 = new Paragraph("System Descryption: "+ description);
+            Paragraph p_4 = new Paragraph(" ");
+
+            Paragraph p1 = new Paragraph("SYSTEM DETAILS");
+            Paragraph p2 = new Paragraph("CPU: "+cpu);
+            Paragraph p3 = new Paragraph("Motherboard: "+ mobo);
+            Paragraph p4 = new Paragraph("RAM: "+ ram);
+            Paragraph p5 = new Paragraph("HDD: "+ hdd);
+            Paragraph p6 = new Paragraph("Video Card: "+ video_c);
+            Paragraph p7 = new Paragraph("PSU: "+ psu);
+            Paragraph p8 = new Paragraph("OS: "+ os);
+            Paragraph p9 = new Paragraph("Backup: " + bak);
+            Paragraph p10 = new Paragraph("Backup ID: "+ back_id);
+            Paragraph p11 = new Paragraph("Backup Date: "+back_date);
+            Paragraph p12 = new Paragraph(" ");
+            Paragraph p13 = new Paragraph("=================================================");
+            Paragraph p14 = new Paragraph(" ");
+            Paragraph p15 = new Paragraph(" ");
+            doc.Add(p0);
+            doc.Add(p_);
+            doc.Add(p_00);
+            doc.Add(p_1);
+            doc.Add(p_2);
+            doc.Add(p_3);
+            doc.Add(p_4);
+
+            doc.Add(p1);
+            doc.Add(p2);
+            doc.Add(p3);
+            doc.Add(p4);
+            doc.Add(p5);
+            doc.Add(p6);
+            doc.Add(p7);
+            doc.Add(p8);
+            doc.Add(p9);
+            doc.Add(p10);
+            doc.Add(p11);
+            doc.Add(p12);
+            doc.Add(p13);
+            doc.Add(p14);
+            doc.Add(p15);
+            doc.Close();
+
 
         }
 
-        public static void ReadPDFLog()
+        public static void ReadPDFLog(string id,RichTextBox rt)
         {
+            string strx = string.Empty;
 
+            try
+            {
+                //adding the pdf to the rich text box
+                PdfReader reader = new PdfReader(id+".pdf");
+                for (int page = 1; page <= reader.NumberOfPages; page++)
+                {
+                    ITextExtractionStrategy its = new iTextSharp.text.pdf.parser.LocationTextExtractionStrategy();
+                    String s = PdfTextExtractor.GetTextFromPage(reader, page, its);
+                    s = Encoding.UTF8.GetString(ASCIIEncoding.Convert(Encoding.Default, Encoding.UTF8, Encoding.Default.GetBytes(s)));
+                    strx = strx + s;
+                    rt.Text = strx;
+                }
+                reader.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public static void AddNewLog(string id, RichTextBox previous, RichTextBox current)
+        {
+            DateTime d = DateTime.Now;
+            Document doc = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35);
+            PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream(id + ".pdf", FileMode.Create));
+            doc.Open();
+            Paragraph p0 = new Paragraph(previous.Text);
+            Paragraph p_date = new Paragraph(d.ToString() + ":");
+            Paragraph p1 = new Paragraph(current.Text);
+            Paragraph p12 = new Paragraph(" ");
+            Paragraph p13 = new Paragraph("=================================================");
+            Paragraph p14 = new Paragraph(" ");
+            Paragraph p15 = new Paragraph(" ");
+            doc.Add(p0);
+            doc.Add(p_date);
+            doc.Add(p1);
+            doc.Add(p12);
+            doc.Add(p13);
+            doc.Add(p14);
+            doc.Add(p15);
+            doc.Close();
+
+
+        }
+
+        public static void AddEditLog(string id, string previous, string current)
+        {
+            DateTime d = DateTime.Now;
+            Document doc = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35);
+            PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream(id + ".pdf", FileMode.Create));
+            doc.Open();
+            Paragraph p0 = new Paragraph(previous);
+            Paragraph p_date = new Paragraph(d.ToString() + ":");
+            Paragraph p1 = new Paragraph(current);
+            Paragraph p12 = new Paragraph(" ");
+            Paragraph p13 = new Paragraph("=================================================");
+            Paragraph p14 = new Paragraph(" ");
+            Paragraph p15 = new Paragraph(" ");
+            doc.Add(p0);
+            doc.Add(p_date);
+            doc.Add(p1);
+            doc.Add(p12);
+            doc.Add(p13);
+            doc.Add(p14);
+            doc.Add(p15);
+            doc.Close();
+
+
+        }
+
+        public static void DeleteLog(string id)
+        {
+            string sourceFile = Application.StartupPath+@"\\"+id+".pdf";
+            string destinationFile = Application.StartupPath + @"\\Archived\\_archived" +id+".pdf";
+            System.IO.File.Move(sourceFile, destinationFile);
         }
 
         

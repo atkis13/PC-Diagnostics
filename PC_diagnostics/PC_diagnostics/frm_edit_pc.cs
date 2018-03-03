@@ -13,6 +13,7 @@ namespace PC_diagnostics
     public partial class frm_edit_pc : Form
     {
         string id;
+        string text;
         public frm_edit_pc()
         {
             
@@ -38,9 +39,16 @@ namespace PC_diagnostics
             get { return id; }
         }
 
+        public string getText
+        {
+            set { text = value; }
+            get { return text; }
+        }
+
         private void btn_add_Click(object sender, EventArgs e)
         {
             string message = null;
+            string message2 = null;
             try
             {
 
@@ -64,8 +72,17 @@ namespace PC_diagnostics
                     message = txt_update.Text;
 
                 }
-                MessageBox.Show(cmb_select.Text + " has been updated to " + message);
+                message2 = cmb_select.Text + " has been updated to " + message;
+                try
+                {
+                    Form_Methods.AddEditLog(getID, getText, message2);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
                 this.Close();
+                MessageBox.Show(message2);
                 
             }
             catch (Exception ex)

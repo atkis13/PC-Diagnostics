@@ -32,6 +32,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\..\CS-PK-SQL\pk\Loginapp\Loginapp\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa">
+      <HintPath>..\..\..\..\CS-PK-SQL\pk\Loginapp\Loginapp\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xtra">
+      <HintPath>..\..\..\..\CS-PK-SQL\pk\Loginapp\Loginapp\itextsharp.xtra.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data, Version=6.10.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -53,12 +62,6 @@
     </Compile>
     <Compile Include="frm_add_pc.Designer.cs">
       <DependentUpon>frm_add_pc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_delete_pc.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_delete_pc.Designer.cs">
-      <DependentUpon>frm_delete_pc.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_edit_pc.cs">
       <SubType>Form</SubType>
@@ -82,9 +85,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frm_add_pc.resx">
       <DependentUpon>frm_add_pc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_delete_pc.resx">
-      <DependentUpon>frm_delete_pc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_edit_pc.resx">
       <DependentUpon>frm_edit_pc.cs</DependentUpon>
