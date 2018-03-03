@@ -66,22 +66,28 @@ namespace PC_diagnostics
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
-            try
+            DialogResult dl = MessageBox.Show("Do Your really want to delete this entry", "Delete Entry", MessageBoxButtons.YesNo);
+            if (dl == DialogResult.Yes)
             {
-                Form_Methods.deletePCConfig(comboBox1.Text);
-                Form_Methods.deletePC(comboBox1.Text);
-                Form_Methods.DeleteLog(comboBox1.Text);
+                try
+                {
+                    Form_Methods.deletePCConfig(comboBox1.Text);
+                    Form_Methods.deletePC(comboBox1.Text);
+                    Form_Methods.DeleteLog(comboBox1.Text);
 
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    Form_Methods.CloseDBConnection();
+                    MessageBox.Show("Record id " + comboBox1.Text + " has been deleted");
+                }
             }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                Form_Methods.CloseDBConnection();
-                MessageBox.Show("Record id " + comboBox1.Text + " has been deleted");
-            }
+            
+            
             
             
             
