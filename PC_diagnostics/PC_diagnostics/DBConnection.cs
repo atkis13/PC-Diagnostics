@@ -13,15 +13,15 @@ namespace PC_diagnostics
     {
 
         MySqlConnection connect;
-        private string username = "Ati";
-        private string password = "test";
+        private string username = "user";
+        private string password = "password";
 
         public string Username { get => username; }
         public string Password { get => password; }
 
         public DBConnection()
         {
-            string mycons = "SERVER=192.168.14.29;PORT=3306;DATABASE=pc_diag;UID=Ati;PASSWORD=test";
+            string mycons = "SERVER=192.168.14.29;PORT=3306;DATABASE=pc_diag;UID=user;PASSWORD=password";
             connect = new MySqlConnection(mycons);
         }
 
